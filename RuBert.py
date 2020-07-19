@@ -230,7 +230,7 @@ def main():
     train_com, train_tar = ros.fit_resample(train_com.values.reshape(-1, 1), train_tar)
     train_com = pd.Series(train_com.reshape(-1, ))
         
-    train_data_loader = create_data_loader(train_com.tolist(), train_tar.tolist(), tokenizer, params['max_len'], params['batch_size'], sampler=sampler)
+    train_data_loader = create_data_loader(train_com.tolist(), train_tar.tolist(), tokenizer, params['max_len'], params['batch_size'])
     val_data_loader = create_data_loader(test_com.tolist(), test_tar.tolist(), tokenizer, params['max_len'], params['batch_size'])
 
     del dataset, comments, targets
